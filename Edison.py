@@ -306,7 +306,8 @@ def radio_request(transcript):
 def voice(chat):
    
     voiceResponse = polly.synthesize_speech(Text=chat, OutputFormat="mp3",
-                    VoiceId="Matthew", Engine="neural") #other options include Amy, Joey, Nicole, Raveena and Russell
+                    VoiceId="Matthew") #other options include Amy, Joey, Nicole, Raveena and Russell
+#                    VoiceId="Matthew", Engine="neural") #use this line instead of the one above to use the neural engine
     if "AudioStream" in voiceResponse:
         with voiceResponse["AudioStream"] as stream:
             output_file = "speech.mp3"
