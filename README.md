@@ -1,13 +1,14 @@
 Edison - The Voice Controlled AI Assistant and Clock Radio
-<img width="507" alt="1" src="https://github.com/DevMiser/Edison/assets/22980908/fdfac476-9d0b-4a0c-9255-23895c279d31">
-<img width="515" alt="2" src="https://github.com/DevMiser/Edison/assets/22980908/a644f37d-2f1b-40eb-91d0-933d79d8e8a5">
-<img width="493" alt="3" src="https://github.com/DevMiser/Edison/assets/22980908/b8212dea-c4d2-417e-aa50-432edb4c9ecd">
-<img width="491" alt="4" src="https://github.com/DevMiser/Edison/assets/22980908/4edd7abd-6672-476d-b3fc-fd442fecfc62">
-<img width="478" alt="5" src="https://github.com/DevMiser/Edison/assets/22980908/0e123c64-f745-40dd-9cef-0a4301cdc12f">
-<img width="486" alt="6" src="https://github.com/DevMiser/Edison/assets/22980908/694c220f-3590-4697-8d84-360131da1566">
-<img width="490" alt="7" src="https://github.com/DevMiser/Edison/assets/22980908/381944eb-18d8-42b5-bd17-f3509aecc7e3">
-<img width="495" alt="8" src="https://github.com/DevMiser/Edison/assets/22980908/001db72e-c712-40f2-bdd2-e46a03c10b54">
-<img width="505" alt="9" src="https://github.com/DevMiser/Edison/assets/22980908/bb732f26-6f8b-421a-9877-bc460c51ab6a">
-<img width="494" alt="10" src="https://github.com/DevMiser/Edison/assets/22980908/4e3b9e7d-f693-4540-8181-e609326801f7">
-<img width="515" alt="12" src="https://github.com/DevMiser/Edison/assets/22980908/9af73d26-0829-4bdd-a0ad-6f9fcd933159">
-<img width="479" alt="13" src="https://github.com/DevMiser/Edison/assets/22980908/dcf39116-91bd-4f54-b529-3d9fb1b7c2db">
+
+<img width="494" alt="image" src="https://github.com/DevMiser/Edison/assets/22980908/4af7053b-2182-41f1-9f86-9a723171cb7d">
+<img width="515" alt="2" src="https://github.com/DevMiser/Edison/assets/22980908/656d4e9f-6dda-4602-8944-530cdb463523">
+<img width="493" alt="3" src="https://github.com/DevMiser/Edison/assets/22980908/7b96f9eb-48f8-4627-bea3-a0fb8ac77ab3">
+<img width="491" alt="4" src="https://github.com/DevMiser/Edison/assets/22980908/8dbd5a02-114d-4ffe-8862-98a293efdcec">
+<img width="478" alt="5" src="https://github.com/DevMiser/Edison/assets/22980908/1797a981-1802-44c3-b05a-eab90dd5c081">
+<img width="486" alt="6" src="https://github.com/DevMiser/Edison/assets/22980908/cea3ad7a-ca28-43c1-8d56-34503e334c4b">
+<img width="490" alt="7" src="https://github.com/DevMiser/Edison/assets/22980908/1be84d45-091b-4f0f-a3a1-b79fcd35773f">
+<img width="495" alt="8" src="https://github.com/DevMiser/Edison/assets/22980908/ff9196ca-d977-436b-acc4-a2d20eee2466">
+<img width="505" alt="9" src="https://github.com/DevMiser/Edison/assets/22980908/b45e5344-79f4-479e-9deb-b3bdd534f992">
+<img width="494" alt="10" src="https://github.com/DevMiser/Edison/assets/22980908/a793b270-7f5f-44d3-9c3a-601f882fcfcc">
+<img width="515" alt="11" src="https://github.com/DevMiser/Edison/assets/22980908/fb070d1a-b6a1-46dd-b795-da8f64bde870">
+<img width="479" alt="12" src="https://github.com/DevMiser/Edison/assets/22980908/795ad1d2-faa8-468c-abf8-b52bbc1bdd8e">
