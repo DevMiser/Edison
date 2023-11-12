@@ -332,7 +332,7 @@ def wake_word():
     
     global Radio
 
-   porcupine = pvporcupine.create(keywords=["computer", "jarvis", "Edison",],
+    porcupine = pvporcupine.create(keywords=["computer", "jarvis", "Edison",],
                             access_key=pv_access_key,
                             sensitivities=[0.1, 0.1, 0.4], #from 0 to 1.0 - a higher number reduces
                                    #the miss rate at the cost of increased false alarms                              
