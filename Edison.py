@@ -1,3 +1,7 @@
+# the following program is provided by DevMiser - https://github.com/DevMiser
+
+#!/usr/bin/env python3
+
 import board
 import boto3
 import datetime
@@ -24,6 +28,7 @@ environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame
 
 from adafruit_ht16k33.segments import Seg7x4
+from openai import OpenAI
 from colorama import Fore, Style
 from PIL import Image,ImageDraw,ImageFont,ImageOps,ImageEnhance
 from pvleopard import *
@@ -52,10 +57,12 @@ porcupine = None
 recorder = None
 wav_file = None
 
-GPT_model = "gpt-4" # most capable GPT model and optimized for chat
+GPT_model = "gpt-4" # most capable GPT model and optimized for chat.  You can substitute with gpt-3.5-turbo for lower cost and latency.
 
 openai.api_key = "put your secret API key between these quotation marks"
 pv_access_key= "put your secret access key between these quotation marks"
+
+client = OpenAI(api_key=openai.api_key)
 
 prompt = ["How may I assist you?",
     "How may I help?",
@@ -67,7 +74,7 @@ prompt = ["How may I assist you?",
     "What would you like me to do?"]
 
 chat_log=[
-    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "system", "content": "Your name is Edison. You are a helpful assistant and an internet clock radio. If asked about yourself, you include your name in your response."},
     ]
 
 #Edison will 'remember' earlier queries so that it has greater continuity in its response
@@ -77,24 +84,24 @@ def append_clear_countdown():
     global chat_log
     chat_log.clear()
     chat_log=[
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system", "content": "Your name is Edison. You are a helpful assistant and an internet clock radio. If asked about yourself, you include your name in your response."},
         ]    
     global count
     count = 0
     t_count.join
 
 def ChatGPT(query):
-    user_query=[
+    user_query = [
         {"role": "user", "content": query},
-        ]
+        ]         
     send_query = (chat_log + user_query)
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
     model=GPT_model,
     messages=send_query
     )
-    answer = response.choices[0]['message']['content']
+    answer = response.choices[0].message.content
     chat_log.append({"role": "assistant", "content": answer})
-    return str.strip(response['choices'][0]['message']['content'])
+    return answer
 
 def change_station(transcript):
     
@@ -307,7 +314,6 @@ def voice(chat):
    
     voiceResponse = polly.synthesize_speech(Text=chat, OutputFormat="mp3",
                     VoiceId="Matthew") #other options include Amy, Joey, Nicole, Raveena and Russell
-#                    VoiceId="Matthew", Engine="neural") #use this line instead of the one above to use the neural engine
     if "AudioStream" in voiceResponse:
         with voiceResponse["AudioStream"] as stream:
             output_file = "speech.mp3"
@@ -482,7 +488,7 @@ try:
             o.delete
             recorder = None
             
-        except openai.error.APIError as e:
+        except openai.APIError as e:
             print("\nThere was an API error.  Please try again in a few minutes.")
             voice("\nThere was an A P I error.  Please try again in a few minutes.")
             event.set()
@@ -493,18 +499,7 @@ try:
             recorder = None
             sleep(1)
 
-        except openai.error.Timeout as e:
-            print("\nYour request timed out.  Please try again in a few minutes.")
-            voice("\nYour request timed out.  Please try again in a few minutes.")
-            event.set()
-            GPIO.output(led1_pin, GPIO.LOW)
-            GPIO.output(led2_pin, GPIO.LOW)        
-            recorder.stop()
-            o.delete
-            recorder = None
-            sleep(1)
-
-        except openai.error.RateLimitError as e:
+        except openai.RateLimitError as e:
             print("\nYou have hit your assigned rate limit.")
             voice("\nYou have hit your assigned rate limit.")
             event.set()
@@ -515,7 +510,7 @@ try:
             recorder = None
             break
 
-        except openai.error.APIConnectionError as e:
+        except openai.APIConnectionError as e:
             print("\nI am having trouble connecting to the API.  Please check your network connection and then try again.")
             voice("\nI am having trouble connecting to the A P I.  Please check your network connection and try again.")
             event.set()
@@ -526,7 +521,7 @@ try:
             recorder = None
             sleep(1)
 
-        except openai.error.AuthenticationError as e:
+        except openai.AuthenticationError as e:
             print("\nYour OpenAI API key or token is invalid, expired, or revoked.  Please fix this issue and then restart my program.")
             voice("\nYour Open A I A P I key or token is invalid, expired, or revoked.  Please fix this issue and then restart my program.")
             event.set()
@@ -536,17 +531,6 @@ try:
             o.delete
             recorder = None
             break
-
-        except openai.error.ServiceUnavailableError as e:
-            print("\nThere is an issue with OpenAI’s servers.  Please try again later.")
-            voice("\nThere is an issue with Open A I’s servers.  Please try again later.")
-            event.set()
-            GPIO.output(led1_pin, GPIO.LOW)
-            GPIO.output(led2_pin, GPIO.LOW)        
-            recorder.stop()
-            o.delete
-            recorder = None
-            sleep(1)
           
 except KeyboardInterrupt:
     print("\nExiting ChatGPT Virtual Assistant")
