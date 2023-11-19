@@ -1,7 +1,3 @@
-IMPORTANT TEMPORARY CHANGE - OpenAI recently updated its API
-For now, instead of using the command "pip3 install --upgrade openai"
-in the instructions below, use the command
-pip3 install openai==0.28
 
 
 <img width="507" alt="1" src="https://github.com/DevMiser/Edison/assets/22980908/974a35bc-242d-4440-ab28-e83d991dd81a">
