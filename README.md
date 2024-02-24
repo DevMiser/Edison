@@ -2,6 +2,12 @@ Raspberry Pi’s newest OS (Bookworm) released on December 5, 2023, does not wor
 For best results, use a Raspberry Pi 4 (not a Raspberry Pi 5) and use the legacy 64-bit OS.
 Instructions are in the Important - Please Read file on this repository.
 
+Also, The i2C interface needs to be turned on in order for the display to show the time (thank you to luckyzero46 for pointing this out).  To do so, open a terminal and enter:
+
+sudo raspi-config
+
+Then use the arrow on your keyboard to scroll down to Interface Options and press Enter.  Next scroll down to I2C and press Enter.  You will be asked whether you want to enable the I2C interface.  Scroll to Yes and press enter.  Then press OK followed by Finish and reboot your Pi.
+
 <img width="507" alt="1" src="https://github.com/DevMiser/Edison/assets/22980908/974a35bc-242d-4440-ab28-e83d991dd81a">
 <img width="515" alt="2" src="https://github.com/DevMiser/Edison/assets/22980908/410cfe68-9cf2-4993-a3e9-0ccc085c36b2">
 <img width="493" alt="3" src="https://github.com/DevMiser/Edison/assets/22980908/42582045-36a6-4883-ad5c-c6a8237fff66">
