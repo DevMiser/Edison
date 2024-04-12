@@ -2,6 +2,8 @@ Raspberry Pi’s newest OS (Bookworm) released on December 5, 2023, does not wor
 For best results, use a Raspberry Pi 4 (not a Raspberry Pi 5) and use the legacy 64-bit OS.
 Instructions are in the Important - Please Read file on this repository.
 
+On March 26, 2024, OpenAI updated its billing system to require the pre-purchase of credits in order to use the API for most users.  If you do not pre-purchase credits, you will get an API error.
+
 Also, The i2C interface needs to be turned on in order for the display to show the time (thank you to luckyzero46 for pointing this out).  To do so, open a terminal and enter:
 
 sudo raspi-config
